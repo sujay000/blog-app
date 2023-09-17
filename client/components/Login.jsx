@@ -8,6 +8,8 @@ function Login() {
     async function handleLogin() {
         const baseurl = `http://localhost:3000`
         const url = baseurl + `/login`
+        console.log(username, 'here')
+        console.log(password)
         let data = {
             username,
             password,
@@ -25,17 +27,38 @@ function Login() {
             localStorage.setItem('token', token)
             navigate('/dashboard')
         } else {
-            alert('login invalid')
+            console.log(username, '========')
+            console.log(password)
+            alert(`login invalid : ${res.message}`)
         }
     }
     async function handleDummy() {
         setUsername('hello')
         setPassword('123')
-        document.getElementById('loginButton').click()
+        const baseurl = `http://localhost:3000`
+        const url = baseurl + `/login`
+        let data = {
+            username: 'hello',
+            password: '123',
+        }
+        let res = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        res = await res.json()
+        let token = res.token
+        if (token) {
+            localStorage.setItem('token', token)
+            navigate('/dashboard')
+        } else {
+            alert(`login invalid : ${res.message}`)
+        }
     }
     return (
         <div>
-            {localStorage.getItem('token')}
             <h2>Login</h2>
             Username - <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} /> <br />
             Password - <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} /> <br />

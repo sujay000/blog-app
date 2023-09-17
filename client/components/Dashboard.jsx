@@ -13,6 +13,13 @@ function Dashboard() {
         <div>
             <h3>Dashboard</h3>
             <button onClick={handleLogout}>Logout</button>
+            <button
+                onClick={() => {
+                    navigate('/createblog')
+                }}
+            >
+                Create Blog
+            </button>
             <Routes>
                 <Route path="/" element={<AllBlogs />} />
                 <Route path="/myblogs" element={<MyBlogs />} />

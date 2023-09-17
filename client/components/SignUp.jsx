@@ -31,7 +31,6 @@ function SignUp() {
 
     return (
         <div>
-            {localStorage.getItem('token')}
             <h2>Sign Up</h2>
             Username - <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} /> <br />
             Password - <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} /> <br />{' '}
