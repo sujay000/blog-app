@@ -171,17 +171,4 @@ BLOGS = [
     }
 ]
 
-
-{
-    "blogs": [
-        {
-            "_id": "650683f60edf1a641b784b6e",
-            "title": "how to do ",
-            "description": "it is desc",
-            "__v": 0
-        }
-    ]
-}
-
-
 */

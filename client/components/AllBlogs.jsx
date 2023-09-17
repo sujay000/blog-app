@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 import Blog from '../extra-components/Blog'
 import { useEffect, useState } from 'react'
+const baseurl = `https://blog-app-27r2.onrender.com/`
 
 function AllBlogs() {
     const [blogs, setBlogs] = useState([])
     useEffect(() => {
         async function fetchData() {
-            const baseurl = `http://localhost:3000`
             const url = baseurl + `/allBlogs`
 
             let res = await fetch(url, {

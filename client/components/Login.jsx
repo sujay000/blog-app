@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+const baseurl = `https://blog-app-27r2.onrender.com/`
+
 function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const navigate = useNavigate()
     async function handleLogin() {
-        const baseurl = `http://localhost:3000`
         const url = baseurl + `/login`
         console.log(username, 'here')
         console.log(password)
@@ -35,7 +36,6 @@ function Login() {
     async function handleDummy() {
         setUsername('hello')
         setPassword('123')
-        const baseurl = `http://localhost:3000`
         const url = baseurl + `/login`
         let data = {
             username: 'hello',

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+const baseurl = `https://blog-app-27r2.onrender.com/`
 
 function UpdateBlog() {
     const [title, setTitle] = useState('')
@@ -7,7 +8,6 @@ function UpdateBlog() {
     let { id } = useParams()
     useEffect(() => {
         async function fetchData() {
-            const baseurl = `http://localhost:3000`
             const url = baseurl + `/blog/${id}`
 
             let res = await fetch(url, {
@@ -27,7 +27,6 @@ function UpdateBlog() {
     const navigate = useNavigate()
 
     async function handleUpdate() {
-        const baseurl = `http://localhost:3000`
         const url = baseurl + `/updateBlog/${id}`
         let data = {
             title,

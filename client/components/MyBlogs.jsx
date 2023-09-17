@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Blog from '../extra-components/Blog'
+const baseurl = `https://blog-app-27r2.onrender.com/`
 
 function MyBlogs() {
     const [blogs, setBlogs] = useState([])
     const navigate = useNavigate()
     useEffect(() => {
         async function fetchData() {
-            const baseurl = `http://localhost:3000`
             const url = baseurl + `/myblogs`
 
             let res = await fetch(url, {
@@ -25,7 +25,6 @@ function MyBlogs() {
 
     async function handleDelete(e) {
         let id = e.target.id
-        const baseurl = `http://localhost:3000`
         const url = baseurl + `/blog/${id}`
         await fetch(url, {
             method: 'DELETE',

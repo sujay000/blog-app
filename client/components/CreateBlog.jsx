@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+const baseurl = `https://blog-app-27r2.onrender.com/`
 
 function CreateBlog() {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const navigate = useNavigate()
     async function handleCreate() {
-        const baseurl = `http://localhost:3000`
         const url = baseurl + `/createBlog`
         let data = {
             title,

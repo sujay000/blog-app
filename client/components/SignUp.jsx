@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+const baseurl = `https://blog-app-27r2.onrender.com/`
+
 function SignUp() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const navigate = useNavigate()
     async function handleSignUp() {
-        const baseurl = `http://localhost:3000`
         const url = baseurl + `/signup`
         let data = {
             username,
