@@ -65,8 +65,9 @@ function Login() {
             <br />
             <button onClick={handleLogin} id="loginButton">
                 Login
-            </button>
-            <button onClick={handleDummy}>Use dummy account</button> <br />
+            </button>{' '}
+            <br />
+            {/* <button onClick={handleDummy}>Use dummy account</button> <br /> */}
             <Link to={'/signup'}>Dont have an acc? Signup</Link>
         </div>
     )
