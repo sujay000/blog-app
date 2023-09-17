@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import Blog from '../extra-components/Blog'
 import { useEffect, useState } from 'react'
-const baseurl = `https://blog-app-27r2.onrender.com/`
+const baseurl = `https://blog-app-27r2.onrender.com`
 
 function AllBlogs() {
     const [blogs, setBlogs] = useState([])

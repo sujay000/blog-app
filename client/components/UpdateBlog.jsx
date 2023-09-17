@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-const baseurl = `https://blog-app-27r2.onrender.com/`
+const baseurl = `https://blog-app-27r2.onrender.com`
 
 function UpdateBlog() {
     const [title, setTitle] = useState('')
