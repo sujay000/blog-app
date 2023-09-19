@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Blog from '../extra-components/Blog'
-const baseurl = `https://blog-app-27r2.onrender.com`
+import { Button, Typography } from '@mui/material'
+
+// const baseurl = `https://blog-app-27r2.onrender.com`
+const baseurl = `http://localhost:3000`
 
 function MyBlogs() {
     const [blogs, setBlogs] = useState([])
@@ -40,9 +43,18 @@ function MyBlogs() {
 
     return (
         <div>
-            <h3>My blogs</h3>
-
-            <Link to="/dashboard/"> Go to all blogs</Link>
+            <div
+                style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                }}
+            >
+                <Typography variant="h4">My blogs</Typography>
+                <Link to="/dashboard/">
+                    <Typography>Go to all blogs</Typography>
+                </Link>
+            </div>
             {blogs.map((blog) => {
                 return (
                     <div
@@ -52,12 +64,12 @@ function MyBlogs() {
                         }}
                     >
                         <Blog id={blog._id} title={blog.title} description={blog.description} />
-                        <button onClick={handleUpdate} id={blog._id}>
+                        <Button onClick={handleUpdate} id={blog._id}>
                             Update
-                        </button>
-                        <button onClick={handleDelete} id={blog._id}>
+                        </Button>
+                        <Button onClick={handleDelete} id={blog._id}>
                             Delete
-                        </button>
+                        </Button>
                     </div>
                 )
             })}

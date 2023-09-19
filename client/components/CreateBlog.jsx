@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-const baseurl = `https://blog-app-27r2.onrender.com`
+// const baseurl = `https://blog-app-27r2.onrender.com`
+const baseurl = `http://localhost:3000`
 
 function CreateBlog() {
     const [title, setTitle] = useState('')
