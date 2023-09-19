@@ -9,6 +9,7 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
+// import ReadBlog from '../extra-components/ReadBlog'
 
 function Dashboard() {
     const navigate = useNavigate()
@@ -51,6 +52,7 @@ function Dashboard() {
                 <Route path="/" element={<AllBlogs />} />
                 <Route path="/myblogs" element={<MyBlogs />} />
                 <Route path="/updateblog/:id" element={<UpdateBlog />} />
+                {/* <Route path="/readblog/:id" element={<ReadBlog />} /> */}
             </Routes>
         </Container>
     )

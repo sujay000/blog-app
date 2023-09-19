@@ -3,8 +3,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import Blog from '../extra-components/Blog'
 import { Button, Typography } from '@mui/material'
 
-// const baseurl = `https://blog-app-27r2.onrender.com`
-const baseurl = `http://localhost:3000`
+const baseurl = `https://blog-app-27r2.onrender.com`
+// const baseurl = `http://localhost:3000`
 
 function MyBlogs() {
     const [blogs, setBlogs] = useState([])

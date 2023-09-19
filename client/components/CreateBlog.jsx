@@ -1,7 +1,12 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-// const baseurl = `https://blog-app-27r2.onrender.com`
-const baseurl = `http://localhost:3000`
+import { Button } from '@mui/material'
+import Card from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
+import TextField from '@mui/material/TextField'
+import CardActions from '@mui/material/CardActions'
+const baseurl = `https://blog-app-27r2.onrender.com`
+// const baseurl = `http://localhost:3000`
 
 function CreateBlog() {
     const [title, setTitle] = useState('')
@@ -26,13 +31,49 @@ function CreateBlog() {
         navigate('/dashboard')
     }
     return (
-        <div>
-            Title - <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} /> <br />
-            Description - <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
-            <br />
-            <br />
-            <button onClick={handleCreate}>Create</button>
-        </div>
+        <Card>
+            <CardContent>
+                <TextField
+                    label="Title"
+                    variant="outlined"
+                    fullWidth
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    sx={{
+                        mb: 2,
+                        mt: 2,
+                    }}
+                />
+                <TextField
+                    label="Content"
+                    variant="outlined"
+                    fullWidth
+                    multiline
+                    rows={4}
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                />
+            </CardContent>
+            <CardActions
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                }}
+            >
+                <Button onClick={handleCreate} variant="outlined" size="large">
+                    Create
+                </Button>
+                <Button
+                    onClick={() => {
+                        navigate('/dashboard/myblogs')
+                    }}
+                    variant="outlined"
+                    size="large"
+                >
+                    Cancel
+                </Button>
+            </CardActions>
+        </Card>
     )
 }
 

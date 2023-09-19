@@ -6,8 +6,8 @@ import CardContent from '@mui/material/CardContent'
 import TextField from '@mui/material/TextField'
 import CardActions from '@mui/material/CardActions'
 
-// const baseurl = `https://blog-app-27r2.onrender.com`
-const baseurl = `http://localhost:3000`
+const baseurl = `https://blog-app-27r2.onrender.com`
+// const baseurl = `http://localhost:3000`
 
 function UpdateBlog() {
     const [title, setTitle] = useState('')
@@ -66,7 +66,7 @@ function UpdateBlog() {
                     }}
                 />
                 <TextField
-                    label="Description"
+                    label="Content"
                     variant="outlined"
                     fullWidth
                     multiline
