@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Blog from '../extra-components/Blog'
 import { useEffect, useState } from 'react'
 const baseurl = `https://blog-app-27r2.onrender.com`
+import Typography from '@mui/material/Typography'
 
 function AllBlogs() {
     const [blogs, setBlogs] = useState([])
@@ -23,7 +24,9 @@ function AllBlogs() {
     }, [])
     return (
         <div>
-            <Link to="/dashboard/myblogs">Go to your blogs</Link>
+            <Link to="/dashboard/myblogs">
+                <Typography>Go to your blogs</Typography>
+            </Link>
             {blogs.map((blog) => {
                 return <Blog key={blog._id} id={blog._id} title={blog.title} description={blog.description} />
             })}
